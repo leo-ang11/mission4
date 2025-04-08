@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Today's Task | Normal</title>
+    <script src="../../system/doneTask.js" defer></script>
+    <script src="../../system/addTaskNormal.js" defer></script>
+    <link rel="stylesheet" href="../../ui-style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-container">
+            <div class="logo">
+                <figure>
+                    <img src="https://img.kkbahagia.com/?width=256&image=https%3A%2F%2Fcdn.harisenin.com%2Fpublic%2Fassets%2Flogos%2Flogo_harisenin.svg" alt="logo">
+                </figure>
+            </div>
+            <div class="profile-data">
+                <figure>
+                    <img src="../../image/pexels-sulimansallehi-1704488.jpg" alt="image profile">
+                </figure>
+                <div class="info-profile-data">
+                    <h4>Jack Doe</h4>
+                     <p>Manager</p>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="list-header-btn">
+                <a href="/all-task/" class="all-btn">All Task</a>
+                <button class="today-btn active">Today's Task</button>
+                <a href="/task-done/" class="done-btn">Task Done</a>
+            </div>
+        </div>
+        <div class="box-content">
+            <div class="content content-today">
+                <div class="header-content">
+                    <div class="time-info-header">
+                        <h1>Today's Task</h1>
+                        <p id="today-time-info">Wednesday, 11 May</p>
+                    </div>
+                    <button class="new-task-btn">
+                        <span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4.5V19.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19.5 12H4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                            
+                        </span>
+                        New Task
+                    </button>
+                </div>
+                <div class="tabs">
+                    <a href="/today-task/urgent/" class="urgent">Urgent (<span id="count-urgent"></span>)</a>
+                    <button class="normal active" > Normal (<span id="count-normal"></span>)</button>
+                    <a href="/today-task/low/" class="low">Low (<span id="count-low"></span>)</a>
+                </div>
+                <div class="tasks" id="task-today-normal">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="out-add-task">
+        <div class="box-add-task">
+            <div class="task-input">
+                <form>
+                    <textarea id="task" placeholder="Tulis tugas di sini..."></textarea>
+                    <div class="detail-data-value">
+                        <div class="card-priority">
+                            <span>
+                                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2.5" y="2.5" width="19" height="19" rx="9.5" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M7.46542 14.7207L9.68737 11.7642C9.82344 11.5821 10.0229 11.4578 10.2463 11.4158C10.4697 11.3738 10.7007 11.4172 10.8936 11.5375L13.0611 12.9069C13.2614 13.0345 13.5037 13.0784 13.7361 13.0292C13.9684 12.98 14.1721 12.8417 14.3036 12.6439L16.5346 9.27924" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                
+                            </span>
+                            <p class="pick-priority">priority</p>
+                            <input type="hidden" id="priority">
+                            <div class="list-option-priority">
+                                <p>Low</p>
+                                <p>Normal</p>
+                                <p>Urgent</p>
+                            </div>
+                        </div>
+                        <div class="box-show-date-picker">
+                            <div class="show-date-picker">
+                                <span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 4.625H7C4.79086 4.625 3 6.41586 3 8.625V17.375C3 19.5841 4.79086 21.375 7 21.375H17C19.2091 21.375 21 19.5841 21 17.375V8.625C21 6.41586 19.2091 4.625 17 4.625Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M3 10.625H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M17 2.625V6.625" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M7 2.625V6.625" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                
+                                </span>
+                                <p class="pick-date">Due Date</p>
+                            </div>
+                            <div class="date-picker">
+                                <div class="card-picker-set">
+                                    <label for="day-schedule">Day</label>
+                                    <input type="date" id="day-schedule">
+                                </div>
+                                <div class="card-picker-set">
+                                    <label for="start-schedule">Start</label>
+                                    <input type="time" id="start-schedule">
+                                </div>
+                                <div class="card-picker-set">
+                                    <label for="end-schedule">End</label>
+                                    <input type="time" id="end-schedule">
+                                </div>
+                                <p id="formatted-date" class="hide"></p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <button id="submit" class="submit-btn-cek" disabled>Submit</button>
+                <button type="reset" id="close-form-add">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../system/showAddForm.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", showurgentData);
+        document.addEventListener("DOMContentLoaded", shownormalData);
+        document.addEventListener("DOMContentLoaded", showlowData);
+
+
+
+        let Containertasktodayurgent = document.getElementById('task-today-urgent');
+        let Containertasktodaynormal = document.getElementById('task-today-normal');
+        let Containertasktodaylow = document.getElementById('task-today-low');
+        
+
+        function showurgentData() {
+            // Ambil data tugas yang sudah ada di localStorage, atau buat array kosong jika belum ada
+            let tasks = JSON.parse(localStorage.getItem('tasksData')) || [];
+            let today = new Date();
+            let dayOfWeek = today.toLocaleString('id-ID', { weekday: 'long' }); 
+            let dayOfMonth = today.getDate(); 
+            let month = today.toLocaleString('id-ID', { month: 'long' }); 
+            let year = today.getFullYear(); 
+            
+            let formattedToday = `${dayOfWeek}, ${dayOfMonth} ${month} ${year}`;
+
+            let todaytaskUrgent = tasks.filter(item => item.dayschedule === formattedToday && item.priority === "Urgent" && item.completed === false );
+
+            let counturgent = document.getElementById('count-urgent');
+            counturgent.innerHTML = todaytaskUrgent.length;
+        }
+    
+        function shownormalData() {
+            // Ambil data tugas yang sudah ada di localStorage, atau buat array kosong jika belum ada
+            let tasks = JSON.parse(localStorage.getItem('tasksData')) || [];
+            let today = new Date();
+            let dayOfWeek = today.toLocaleString('id-ID', { weekday: 'long' }); 
+            let dayOfMonth = today.getDate(); 
+            let month = today.toLocaleString('id-ID', { month: 'long' }); 
+            let year = today.getFullYear(); 
+            
+            let formattedToday = `${dayOfWeek}, ${dayOfMonth} ${month} ${year}`;
+
+            let todaytaskNormal = tasks.filter(item => item.dayschedule === formattedToday && item.priority === "Normal" && item.completed === false );
+
+            Containertasktodaynormal.innerHTML = '';
+            let countnormal = document.getElementById('count-normal');
+            countnormal.innerHTML = todaytaskNormal.length;
+
+            if(todaytaskNormal.length === 0) {
+                let noDataMessage = document.createElement('p');
+                noDataMessage.textContent = 'No Data';
+                noDataMessage.className = "empty-data";
+                Containertasktodaynormal.appendChild(noDataMessage);
+            } else {
+                todaytaskNormal.forEach((taskData) => {
+                    let cardtask = document.createElement('div');
+                    cardtask.className = "task";
+                    cardtask.innerHTML = `
+                    <div>
+                        <span class="task-id hide">${taskData.id}</span>
+                        <h2>${taskData.title}</h2>
+                        <p>${taskData.dayschedule} | ${taskData.startschedule} - ${taskData.endschedule}</p>
+                        <p id="pr-s"> Priority: ${taskData.priority}</p>
+                    </div>
+                    <div class="status">
+                        <button type="button" title="done" class="task-done-button"></button>
+                    </div>
+                    `;
+                    Containertasktodaynormal.appendChild(cardtask);
+                });
+            }
+
+        }
+
+        function showlowData() {
+            // Ambil data tugas yang sudah ada di localStorage, atau buat array kosong jika belum ada
+            let tasks = JSON.parse(localStorage.getItem('tasksData')) || [];
+            let today = new Date();
+            let dayOfWeek = today.toLocaleString('id-ID', { weekday: 'long' }); 
+            let dayOfMonth = today.getDate(); 
+            let month = today.toLocaleString('id-ID', { month: 'long' }); 
+            let year = today.getFullYear(); 
+            
+            let formattedToday = `${dayOfWeek}, ${dayOfMonth} ${month} ${year}`;
+
+            let todaytaskLow = tasks.filter(item => item.dayschedule === formattedToday && item.priority === "Low" && item.completed === false );
+
+            let countlow = document.getElementById('count-low');
+            countlow.innerHTML = todaytaskLow.length;
+        }
+
+        
+    </script>
+
+    <script src="../../system/showDateToday.js" defer></script>
+
+</body>
+</html>
